@@ -57,7 +57,7 @@ const API_URL = `${API_BASE}/api`;
 export const api = axios.create({
   baseURL: API_URL,
   headers: { "Content-Type": "application/json" },
-  withCredentials: false,
+  withCredentials: true,
 });
 
 function safeUUID() {
@@ -105,8 +105,14 @@ async function refreshAccessToken() {
   const { accessToken, refreshToken: newRt } = r.data || {};
   if (!accessToken) throw new Error("Refresh response missing accessToken");
 
-  setCookie("accessToken", accessToken, { maxAge: 60 * 60 * 24 * 7 });
-  if (newRt) setCookie("refreshToken", newRt, { maxAge: 60 * 60 * 24 * 14 });
+  const COOKIE_OPTS = {
+  path: "/",
+  sameSite: "lax" as const,
+  secure: false, // لأنك مش HTTPS
+};
+
+setCookie("accessToken", accessToken, { ...COOKIE_OPTS, maxAge: 60 * 60 * 24 * 7 });
+if (newRt) setCookie("refreshToken", newRt, { ...COOKIE_OPTS, maxAge: 60 * 60 * 24 * 14 });
 
   return accessToken as string;
 }
