@@ -51,7 +51,7 @@
 import axios, { AxiosError } from "axios";
 import { getCookie, setCookie, deleteCookie } from "cookies-next";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://localhost:7000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 const API_URL = `${API_BASE}/api`;
 
 export const api = axios.create({

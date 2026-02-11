@@ -1,4 +1,4 @@
-const API = process.env.NEXT_PUBLIC_API_BASE || "https://localhost:7000";
+const API = process.env.NEXT_PUBLIC_API_BASE;
 
 async function http<T>(url: string, opts: RequestInit = {}): Promise<T> {
   const res = await fetch(`${API}${url}`, {
