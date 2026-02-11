@@ -29,9 +29,9 @@ export default function SignInPage() {
 
     try {
       const res = await api.post("/auth/login", { identifier, password });
+      await login(res.data); 
       toast.success("تم تسجيل الدخول بنجاح");
       router.push("/dashboard");
-      login(res.data);
     } catch (error: any) {
       console.error(error);
       toast.error(error.response?.data || "حدث خطأ أثناء تسجيل الدخول");
