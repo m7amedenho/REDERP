@@ -28,8 +28,9 @@ export default function SignInPage() {
     setLoading(true);
 
     try {
+      router.push("/dashboard");
       const res = await api.post("/auth/login", { identifier, password });
-      await login(res.data); 
+      await login(res.data);
       toast.success("تم تسجيل الدخول بنجاح");
       router.push("/dashboard");
     } catch (error: any) {
