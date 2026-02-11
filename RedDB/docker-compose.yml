@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:18.1 
+    container_name: RedDB_Server
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: RedDB
+      POSTGRES_USER: RedUser
+      POSTGRES_PASSWORD: Red0128
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
+    driver: local
