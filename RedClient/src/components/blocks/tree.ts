@@ -256,34 +256,22 @@ const data = {
           url: "/dashboard/accounts",
           icon: IconCash,
         },
-        { title: "رصيد أول المدة (عام)", url: "#", icon: IconGift },
-        { title: "القيود اليومية", url: "#", icon: IconClipboardList },
-        { title: "الإقفال السنوي", url: "#", icon: IconCalendarStats },
-        { title: "ميزان المراجعة", url: "#", icon: IconScale },
-        { title: "دفتر الاستاذ", url: "#", icon: IconBook },
+        { title: "ميزان المراجعة", url: "/dashboard/accounting/trial-balance", icon: IconScale },
+        { title: "دفتر الاستاذ", url: "/dashboard/accounting/general-ledger", icon: IconBook },
       ],
     },
 
     {
       label: "الخزينة والنقدية",
       items: [
-        { title: "الخزن", url: "#", icon: IconBuildingWarehouse },
-        { title: "التحصيلات اليومية", url: "#", icon: IconCreditCard },
-        { title: "دفتر الشيكات", url: "#", icon: IconClipboardList },
-        { title: "الإيرادات الأخرى", url: "#", icon: IconGift },
-        { title: "المصروفات التشغيلية", url: "#", icon: IconReceipt },
+        { title: "الخزن", url: "/dashboard/wallet", icon: IconBuildingWarehouse },
+        { title: "التحصيلات اليومية", url: "/dashboard/finance/daily-collections", icon: IconCreditCard },
+        { title: "دفتر الشيكات", url: "/dashboard/finance/checks-book", icon: IconClipboardList },
+        { title: "المصروفات التشغيلية", url: "/dashboard/finance/operational-expenses", icon: IconReceipt },
       ],
     },
 
-    {
-      label: "المدينون والدائنين",
-      items: [
-        { title: "المديونيات العامة", url: "#", icon: IconAlertTriangle },
-        { title: "العهد", url: "#", icon: IconBriefcase },
-        { title: "تقادم المديونيات", url: "#", icon: IconClock },
-        { title: "مطابقة الفواتير", url: "#", icon: IconChecklist },
-      ],
-    },
+   
     {
       label: "الشركة",
       items: [

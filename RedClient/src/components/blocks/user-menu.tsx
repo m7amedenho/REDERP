@@ -30,7 +30,7 @@ export default function UserMenu() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-10 w-10 rounded-full">
           <Avatar className="h-10 w-10 border border-zinc-200 dark:border-zinc-700">
-            <AvatarImage src={user.profilePictureUrl} alt={user.fullName} />
+            {/* <AvatarImage src={user.profilePictureUrl} alt={user.fullName} /> */}
             <AvatarFallback>{initials}</AvatarFallback>
           </Avatar>
         </Button>
