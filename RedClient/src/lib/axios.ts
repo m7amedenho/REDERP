@@ -152,8 +152,8 @@ api.interceptors.response.use(
         deleteCookie("refreshToken");
 
         // رجّع المستخدم للوجين
-        if (typeof window !== "undefined") window.location.href = "/sign-in";
-        return Promise.reject(error);
+        // if (typeof window !== "undefined") window.location.href = "/sign-in";
+        // return Promise.reject(error);
       } finally {
         isRefreshing = false;
       }
